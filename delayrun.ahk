@@ -22,11 +22,11 @@ myGui.BackColor := "1E1E1E" ; 画面全体の背景（ダークグレー）
 ; ボタンやテキストの文字色を「眩しくない暗めの白（薄いグレー: B0B0B0）」に設定
 myGui.SetFont("s10 cB0B0B0", "Segoe UI")
 
-; 操作ボタンエリア
+; 操作ボタンエリア（重なりを解消し、間隔を5pxに均一化）
 btnAdd  := myGui.Add("Button", "x10 y10 w70", "➕ 追加")
 btnEdit := myGui.Add("Button", "x85 y10 w100", "✏️ 秒数変更")
 btnDel  := myGui.Add("Button", "x190 y10 w70", "❌ 削除")
-btnUp   := myGui.Add("Button", "x255 y10 w35", "🔼")
+btnUp   := myGui.Add("Button", "x265 y10 w35", "🔼")
 btnDown := myGui.Add("Button", "x305 y10 w35", "🔽")
 btnTest := myGui.Add("Button", "x345 y10 w100", "⚡ テスト実行")
 btnRun  := myGui.Add("Button", "x450 y10 w110", "▶️ 連続実行")
@@ -58,7 +58,7 @@ btnDel.OnEvent("Click", DeleteApp)
 btnUp.OnEvent("Click", MoveUp)
 btnDown.OnEvent("Click", MoveDown)
 btnTest.OnEvent("Click", TestCurrentApp)
-btnRun.OnEvent("Click", ToggleRunApps) ; ボタンの役割をトグルに変更
+btnRun.OnEvent("Click", ToggleRunApps)
 radStop.OnEvent("Click", SaveErrorSetting)
 radSkip.OnEvent("Click", SaveErrorSetting)
 lv.OnEvent("DoubleClick", EditDelay)
